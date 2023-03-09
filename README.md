@@ -12,3 +12,9 @@
 - Wiktoria Kuprańska
 - Hubert Fijołek
 - Albert Jurasik
+
+---
+## Workflow:
+### How to start project on local machine:
+- git clone - clone the repository
+- pip install -r requirements.txt
