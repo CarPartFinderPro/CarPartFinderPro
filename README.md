@@ -29,3 +29,7 @@
 ### Branches:
 - use frontend-branch to edit related to frontend files
 - use backend-branch to edit related to backend files
+
+### To synchronize between branches:
+- git fetch to find new branches
+- git checkout -b <branch-name> origin/<branch-name> - to add branch locally and synchronize
