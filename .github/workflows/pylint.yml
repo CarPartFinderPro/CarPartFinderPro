@@ -1,0 +1,21 @@
+name: Run Pylint
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pylint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Pylint on car_part_finder_pro app
+        run: pylint car_part_finder_pro
+      - name: Run Pylint on part_ad app
+        run: pylint part_ad

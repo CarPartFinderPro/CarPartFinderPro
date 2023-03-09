@@ -1,0 +1,13 @@
+.venv
+./venv
+./venv/*
+.idea
+./idea
+./idea/*
+__pycache__
+
+car_part_finder_pro/__pycache__/*
+part_ad/__pycache__/*
+
+car_part_finder_pro/__pycache__
+part_ad/__pycache__
