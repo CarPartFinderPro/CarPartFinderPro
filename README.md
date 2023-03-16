@@ -33,3 +33,10 @@
 ### To synchronize between branches:
 - git fetch to find new branches
 - git checkout -b <branch-name> origin/<branch-name> - to add branch locally and synchronize
+
+### To make migrations
+- python manage.py makemigrations
+- python manage.py migrate
+
+## To generate and load fixtures
+-- python manage.py load_fixtures

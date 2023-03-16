@@ -1,28 +1,26 @@
-import json
+import itertools
 from faker import Faker
 
 fake = Faker()
-
-
 def generate_delivery_data(num_deliveries=10, num_users=10, num_addresses=10):
     deliveries = []
+
+    user_address_combinations = list(itertools.product(range(1, num_users + 1), ("home", "work")))
+
     for _ in range(num_deliveries):
+        if not user_address_combinations:
+            break
+
+        user, address_type = user_address_combinations.pop(0)
+
         delivery = {
             "model": "part_ad.Delivery",
             "fields": {
-                "user": fake.random_int(min=1, max=num_users),
+                "user": user,
                 "address": fake.random_int(min=1, max=num_addresses),
-                "address_type": fake.random_element(elements=("home", "work")),
+                "address_type": address_type,
                 "primary": fake.boolean(chance_of_getting_true=50),
             }
         }
         deliveries.append(delivery)
     return deliveries
-
-
-if __name__ == "__main__":
-    num_deliveries = 10
-    deliveries = generate_delivery_data(num_deliveries)
-
-    with open("delivery_fixtures.json", "w") as outfile:
-        json.dump(deliveries, outfile)

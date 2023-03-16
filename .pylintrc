@@ -5,3 +5,6 @@ disable = C0103,C0301,R0801
 
 [FORMAT]
 max-line-length = 120
+
+[IMPORTS]
+extension-pkg-allow-list=decouple
