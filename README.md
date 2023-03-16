@@ -1,18 +1,17 @@
 # CarPartFinderPro
 
-## Założenia projektowe:
+A web platform for posting car part listings, with a focus on parts for imported American cars and vehicles with hard-to-find parts.
 
-1. Co chcemy stworzyć? - Stworzenie platformy webowej umożliwiającej dodawanie ogłoszeń dla części do aut.
-2. W jakim celu chcemy to stworzyć? - Chcemy rozpowszechnić dostępność części do aut sprowadzanych z Ameryki oraz
-   pojazdów z trudno dostępnymi częściami.
-3. W jaki sposób chcemy to stworzyć?:
+## Project Goals:
 
-- a) Wstępnie zakładamy stack technologiczny: Django - Python, Vue.js, PostgreSQL.
-- b) Narzędzia do rysowania diagramów dla stworzenia algorytmu działania zespołu i scenariuszy wykorzystania aplikacji
-  przez użytkownika.
-- c) Narzędzia do śledzenia zadań, jak np. Trello.
+1. **What are we creating?** - A web platform that allows users to post listings for car parts.
+2. **Why are we creating this?** - To increase the availability of parts for imported American cars and vehicles with hard-to-find parts.
+3. **How are we creating this?**:
+    - a) Initial technology stack: Django - Python, Vue.js, PostgreSQL.
+    - b) Diagramming tools for creating team workflows and user application use-case scenarios.
+    - c) Task tracking tools such as Trello.
 
-## Autorzy projektu:
+## Project Authors:
 
 - Wiktoria Kuprańska
 - Hubert Fijołek
@@ -22,21 +21,21 @@
 
 ## Workflow:
 
-### How to start project on local machine:
-- git clone - clone the repository
-- pip install -r requirements.txt
+### How to start the project on a local machine:
+1. `git clone` - clone the repository
+2. `pip install -r requirements.txt` - install the required packages
 
 ### Branches:
-- use frontend-branch to edit related to frontend files
-- use backend-branch to edit related to backend files
+- Use `frontend-branch` for frontend-related file modifications.
+- Use `backend-branch` for backend-related file modifications.
 
-### To synchronize between branches:
-- git fetch to find new branches
-- git checkout -b <branch-name> origin/<branch-name> - to add branch locally and synchronize
+### Synchronize between branches:
+1. `git fetch` - to find new branches
+2. `git checkout -b <branch-name> origin/<branch-name>` - to add a branch locally and synchronize
 
-### To make migrations
-- python manage.py makemigrations
-- python manage.py migrate
+### Migrations:
+1. `python manage.py makemigrations` - create new migrations
+2. `python manage.py migrate` - apply the migrations
 
-## To generate and load fixtures
--- python manage.py load_fixtures
+### Generate and load fixtures:
+1. `python manage.py load_fixtures` - load the fixtures
