@@ -1,6 +1,14 @@
 from django.http import JsonResponse
 import json
 
+from rest_framework.generics import ListAPIView
+from .models import User
+from .serializers import UserSerializer
+
+class UserListAPIView(ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    
 def user_list(request):
     with open('fixtures/user_fixtures.json') as f:
         data = json.load(f)
