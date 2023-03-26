@@ -15,8 +15,8 @@ def generate_address_data(num_addresses=10):
                 "city": fake.city(),
                 "state_province": fake.state(),
                 "postal_code": fake.postcode(),
-                "latitude": fake.latitude(),
-                "longitude": fake.longitude(),
+                "latitude": str(fake.latitude()),
+                "longitude": str(fake.longitude()),
             }
         }
         addresses.append(address)
