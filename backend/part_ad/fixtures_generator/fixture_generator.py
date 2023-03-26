@@ -1,10 +1,10 @@
 import os
 
-from .generate_users import generate_user_data
-from .generate_addresses import generate_address_data
-from .generate_deliveries import generate_delivery_data
-from .generate_parcels import generate_parcel_data
-from .generate_car_parts import generate_car_part_data
+from fixtures_generator.generate_users import generate_user_data
+from fixtures_generator.generate_addresses import generate_address_data
+from fixtures_generator.generate_deliveries import generate_delivery_data
+from fixtures_generator.generate_parcels import generate_parcel_data
+from fixtures_generator.generate_car_parts import generate_car_part_data
 import json
 
 
@@ -43,5 +43,6 @@ class FixtureGenerator:
         with open(self.fixtures_path + "car_part_fixtures.json", "w") as outfile:
             json.dump(car_parts, outfile, default=str)
 
-    if __name__ == "__init_fixtures__":
-        init_fixtures()
+
+if __name__ == "__main__":
+    FixtureGenerator().init_fixtures()
