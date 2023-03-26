@@ -1,14 +1,35 @@
+# Import necessary modules and classes
 from django.http import JsonResponse
 import json
+from rest_framework import viewsets
+from rest_framework.response import Response 
+from rest_framework.views import APIView
+from rest_framework import status
+from .serializers import UserSerializer, DeliverySerializer, AddressSerializer, ParcelSerializer, CarPartSerializer
+from .models import *
 
-from rest_framework.generics import ListAPIView
-from .models import User
-from .serializers import UserSerializer
-
-class UserListAPIView(ListAPIView):
+# Define ViewSets for the models
+class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    
+
+class DeliveryViewSet(viewsets.ModelViewSet):
+    queryset = Delivery.objects.all()
+    serializer_class = DeliverySerializer
+
+class AddressViewSet(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+
+class CarPartViewSet(viewsets.ModelViewSet):
+    queryset = CarPart.objects.all()
+    serializer_class = CarPartSerializer
+
+class ParcelViewSet(viewsets.ModelViewSet):
+    queryset = Parcel.objects.all()
+    serializer_class = ParcelSerializer
+
+# Define views to return JSON data from fixture files
 def user_list(request):
     with open('fixtures/user_fixtures.json') as f:
         data = json.load(f)

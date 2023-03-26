@@ -1,26 +1,21 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Users from '../components/Users.vue'
+import Vue from 'vue' // import the Vue library
+import VueRouter from 'vue-router' // import the Vue Router library
+import CarPartList from '../components/CarPartList.vue' // import the CarPartList component
 
-Vue.use(VueRouter)
+Vue.use(VueRouter) // tell Vue to use the Vue Router library
 
-const routes = [
+const routes = [ // define the routes
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/users',
-    name: 'Users',
-    component: Users
+    path: '/car_parts', // the URL path
+    name: 'CarPartList', // the name of the route
+    component: CarPartList // the component to render when the route is accessed
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+const router = new VueRouter({ // create a new instance of Vue Router
+  mode: 'history', // enable history mode (no hash in URL)
+  base: process.env.BASE_URL, // set the base URL
+  routes // pass in the routes we defined earlier
 })
 
-export default router
+export default router // export the router so we can use it elsewhere in our application
