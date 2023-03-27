@@ -33,10 +33,10 @@ export default {
       })
   },
   methods: {
-    viewCarPart(carPartId) {
-      this.$router.push(`/car_part/${carPartId}`);
-    }
+  viewCarPart(carPartId) {
+    this.$router.push({ name: 'CarPartDetails', params: { id: carPartId } })
   }
+}
 }
 </script>
 
