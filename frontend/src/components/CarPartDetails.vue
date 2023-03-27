@@ -13,13 +13,19 @@
   import axios from 'axios';
   
   export default {
+    props: {
+      id: {
+        type: Number,
+        required: true
+      }
+    },
     data() {
       return {
         carPart: {}
       }
     },
     mounted() {
-      axios.get(`/api/car_parts/${this.$route.params.id}/`)
+      axios.get(`/api/car_parts/${this.id}/`)
         .then(response => {
           this.carPart = response.data;
         })

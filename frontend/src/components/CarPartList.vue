@@ -1,15 +1,17 @@
 <template>
   <div>
     <div class="car-part-list">
-      <div v-for="carPart in carParts" :key="carPart.id" class="car-part-item" @click="viewCarPart(carPart.id)">
-        <h3 class="car-part-title">{{ carPart.title }}</h3>
-        <div class="car-part-details">
-          <p>Brand: {{ carPart.brand }}</p>
-          <p>Model: {{ carPart.model }}</p>
-          <p>Year: {{ carPart.year_from }}</p>
-          <p>Price: {{ carPart.price }}</p>
+      <router-link v-for="carPart in carParts" :key="carPart.id" :to="{ name: 'CarPartDetails', params: { id: carPart.id }}">
+        <div class="car-part-item">
+          <h3 class="car-part-title">{{ carPart.title }}</h3>
+          <div class="car-part-details">
+            <p>Brand: {{ carPart.brand }}</p>
+            <p>Model: {{ carPart.model }}</p>
+            <p>Year: {{ carPart.year_from }}</p>
+            <p>Price: {{ carPart.price }}</p>
+          </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -31,12 +33,7 @@ export default {
       .catch(error => {
         console.log(error);
       })
-  },
-  methods: {
-  viewCarPart(carPartId) {
-    this.$router.push({ name: 'CarPartDetails', params: { id: carPartId } })
   }
-}
 }
 </script>
 
