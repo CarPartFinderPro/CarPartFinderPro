@@ -1,13 +1,11 @@
 <template>
     <div>
-      <h2>{{ carPart.title }}</h2>
-      <div class="car-part-details">
-        <p>Brand: {{ carPart.brand }}</p>
-        <p>Model: {{ carPart.model }}</p>
-        <p>Year: {{ carPart.year_from }}</p>
-        <p>Price: {{ carPart.price }}</p>
-        <p>Description: {{ carPart.description }}</p>
-      </div>
+      <h1>{{ carPart.title }}</h1>
+      <p>Brand: {{ carPart.brand }}</p>
+      <p>Model: {{ carPart.model }}</p>
+      <p>Year: {{ carPart.year_from }}</p>
+      <p>Price: {{ carPart.price }}</p>
+      <p>Description: {{ carPart.description }}</p>
     </div>
   </template>
   
@@ -21,7 +19,7 @@
       }
     },
     mounted() {
-      axios.get(`/api/car_parts/${this.$route.params.id}`)
+      axios.get(`/api/car_parts/${this.$route.params.id}/`)
         .then(response => {
           this.carPart = response.data;
         })
