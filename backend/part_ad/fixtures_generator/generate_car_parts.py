@@ -18,7 +18,7 @@ def generate_car_part_data(num_car_parts=10, num_users=10):
                 "year_from": fake.random_int(min=2000, max=2015),
                 "year_to": fake.random_int(min=2016, max=2023),
                 "part_number": fake.random_element(elements=(None, fake.bothify(text='??-####-##'))),
-                "price": round(random.uniform(10, 1000)),
+                "price": str(round(random.uniform(10, 1000))),
                 "color_model": fake.safe_color_name(),
                 "condition": fake.random_element(elements=("new", "used")),
                 "quality": fake.random_element(elements=("O", "OE", "P", "PJ", "Z", "ZJ")),
@@ -29,11 +29,12 @@ def generate_car_part_data(num_car_parts=10, num_users=10):
             }
         }
         car_parts.append(car_part)
+    # print(car_parts)
     return car_parts
 
-    if __name__ == "__main__":
-        num_car_parts = 10
-        car_parts = generate_car_part_data(num_car_parts)
+if __name__ == "__main__":
+    num_car_parts = 10
+    car_parts = generate_car_part_data(num_car_parts)
 
-        with open("car_part_fixtures.json", "w") as outfile:
-            json.dump(car_parts, outfile)
+    with open("car_part_fixtures.json", "w") as outfile:
+        json.dump(car_parts, outfile)

@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
-from decouple import config
+# from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,14 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-SECRET_KEY = config('SECRET_KEY')
+ALLOWED_HOSTS = ['localhost','127.0.0.1','http://localhost:8080']
+# SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-rjc2b26%l=%g0*8s83@uc3q$!j3s2fk^6qjx4sn^bur_w=b4xb'
 
 # Application definition
 
 INSTALLED_APPS = [
     'part_ad',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,12 +45,19 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'frontend', 'dist'),
+# ]
 
 ROOT_URLCONF = 'car_part_finder_pro.urls'
 
