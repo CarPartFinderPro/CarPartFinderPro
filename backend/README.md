@@ -53,7 +53,7 @@ A web platform for posting car part listings, with a focus on parts for imported
 - [ ] Add models:
   - [x] address, car_part, delivery, parcel, user
   - [ ] Favorite (will hold FGK for user and car part)
-- [ ] Add Phone number for User model
+- [ ] Add field Phone number for User model
 - [ ] Add API / endpoint for:
   - [ ] Favorite
   - [ ] Login
