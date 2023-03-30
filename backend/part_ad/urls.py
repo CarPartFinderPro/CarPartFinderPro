@@ -16,4 +16,6 @@ router.register(r'address', AddressViewSet)
 urlpatterns = [
     # Map the API endpoints to the corresponding ViewSets.
     path('api/', include(router.urls)),
+    path('api/car_parts/<int:id>/', views.car_part_details, name='car_part_details'),
+    path('api/car_parts/<int:pk>/', views.car_part_detail_view, name='car_part_detail_view')
 ]

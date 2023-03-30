@@ -1,21 +1,56 @@
-import Vue from 'vue' // import the Vue library
-import VueRouter from 'vue-router' // import the Vue Router library
-import CarPartList from '../components/CarPartList.vue' // import the CarPartList component
+// import { createRouter, createWebHistory } from 'vue-router'
+// import HomeView from '../views/HomeView.vue'
 
-Vue.use(VueRouter) // tell Vue to use the Vue Router library
+// const routes = [
+//   {
+//     path: '/',
+//     name: 'home',
+//     component: HomeView
+//   },
+//   {
+//     path: '/about',
+//     name: 'about',
+//     // route level code-splitting
+//     // this generates a separate chunk (about.[hash].js) for this route
+//     // which is lazy-loaded when the route is visited.
+//     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+//   }
+// ]
 
-const routes = [ // define the routes
+// const router = createRouter({
+//   history: createWebHistory(process.env.BASE_URL),
+//   routes
+// })
+
+// export default router
+
+import { createRouter, createWebHistory } from 'vue-router'
+import CarPartList from '../components/CarPartList.vue'
+import CarPartDetails from '../components/CarPartDetails.vue'
+import UserComponent from '../components/UserComponent.vue'
+
+const routes = [
   {
-    path: '/car_parts', // the URL path
-    name: 'CarPartList', // the name of the route
-    component: CarPartList // the component to render when the route is accessed
+    path: '/',
+    name: 'CarPartList',
+    component: CarPartList
+  },
+  {
+    path: '/uzytkownik',
+    name: 'UserComponent',
+    component: UserComponent
+  },
+  {
+    path: '/car_parts/:id',
+    name: 'CarPartDetails',
+    component: CarPartDetails,
+    props: true
   }
 ]
 
-const router = new VueRouter({ // create a new instance of Vue Router
-  mode: 'history', // enable history mode (no hash in URL)
-  base: process.env.BASE_URL, // set the base URL
-  routes // pass in the routes we defined earlier
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 })
 
-export default router // export the router so we can use it elsewhere in our application
+export default router

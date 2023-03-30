@@ -1,46 +1,43 @@
 <template>
-    <div>
-      <div class="car-part-list">
-        <ul>
-            <!-- Use a v-for directive to loop through the carParts array and display each item in a list -->
-            <li v-for="carPart in carParts" :key="carPart.id">
-                <!-- Display the title, brand, model, year_from, and price of each car part -->
-                <h3>Title: {{ carPart.title }}</h3>
-                <p>Brand: {{ carPart.brand }}</p>
-                <p>Model: {{ carPart.model }}</p>
-                <p>Year: {{ carPart.year_from }}</p>
-                <p>Price: {{ carPart.price }}</p>
-            </li>
-        </ul>
-      </div>
+  <div>
+    <div class="car-part-list">
+      <router-link v-for="carPart in carParts" :key="carPart.id" :to="{ name: 'CarPartDetails', params: { id: carPart.id }}">
+        <div class="car-part-item">
+          <h3 class="car-part-title">{{ carPart.title }}</h3>
+          <div class="car-part-details">
+            <p>Brand: {{ carPart.brand }}</p>
+            <p>Model: {{ carPart.model }}</p>
+            <p>Year: {{ carPart.year_from }}</p>
+            <p>Price: {{ carPart.price }}</p>
+          </div>
+        </div>
+      </router-link>
     </div>
-  </template>
-  
-  <script>
-  import axios from 'axios';
-  
-  export default {
-    data() {
-      return {
-        // Define an empty array to store the car parts data
-        carParts: []
-      }
-    },
-    mounted() {
-    // Use Axios to make a GET request to the API endpoint for car parts
-      axios.get('/api/car_parts/')
-        .then(response => {
-        // When the response is received, set the carParts array to the data returned by the API
-          this.carParts = response.data;
-        })
-        .catch(error => {
-         // If there is an error, log it to the console
-          console.log(error);
-        })
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      carParts: []
     }
+  },
+  mounted() {
+    axios.get('/api/car_parts/')
+      .then(response => {
+        this.carParts = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
-  </script>
-  <style>
+}
+</script>
+
+<style>
 .car-part-list {
   max-width: 600px;
   margin: 0 auto;
@@ -50,17 +47,21 @@
   border-radius: 5px;
 }
 
-.car-part-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.car-part-list li {
+.car-part-item {
+  margin-bottom: 10px;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  cursor: pointer;
 }
 
-.car-part-list li:last-child {
-  border-bottom: none;
+.car-part-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.car-part-details {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
 }
 </style>
