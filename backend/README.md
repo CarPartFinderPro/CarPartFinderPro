@@ -39,3 +39,18 @@ A web platform for posting car part listings, with a focus on parts for imported
 
 ### Generate and load fixtures:
 1. `python manage.py load_fixtures` - load the fixtures
+
+
+---
+
+### TO DO:
+- [ ] Add models:
+  - Favorite (will hold FGK for user and car part)
+- [ ] Add Phone number for User model
+- [ ] Add API / endpoint for:
+  - Favorite
+  - Login
+  - Register
+- [ ] Refactor API
+- [ ] Refactor Serializers
+- [ ] Add validation for serializers
