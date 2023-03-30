@@ -25,12 +25,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ----
 ### TO DO:
-- [ ] Create main page for CarPartFinder Pro
-- [ ] Create Nav Bar
-- [ ] Create details page for car part AD
-- [ ] Create link to pages mentioned in navbar
+- [x] Create main page for CarPartFinder Pro
+- [x] Create Nav Bar
+- [x] Create details page for car part AD
+- [x] Create link to pages mentioned in navbar
 - [ ] Get Data from API for:
-  - [ ] main page
+  - [x] main page
   - [ ] details page for car part AD
   - [ ] Favorite
 - [ ] Add Logo

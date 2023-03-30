@@ -44,13 +44,20 @@ A web platform for posting car part listings, with a focus on parts for imported
 ---
 
 ### TO DO:
+- [x] Create project structure
+- [x] set project: 
+  - [x] configuration / settings 
+  - [x] requirements
+  - [x] runtime
+  - [x] instruction
 - [ ] Add models:
-  - Favorite (will hold FGK for user and car part)
-- [ ] Add Phone number for User model
+  - [x] address, car_part, delivery, parcel, user
+  - [ ] Favorite (will hold FGK for user and car part)
+- [ ] Add field Phone number for User model
 - [ ] Add API / endpoint for:
-  - Favorite
-  - Login
-  - Register
+  - [ ] Favorite
+  - [ ] Login
+  - [ ] Register
 - [ ] Refactor API
 - [ ] Refactor Serializers
 - [ ] Add validation for serializers
