@@ -7,9 +7,9 @@
   </div>
   <div class="ad-site">
     <h1>{{ adTitle }}</h1>
-    <div class="ad-image-container">
+    <!-- <div class="ad-image-container">
       <img src="../src/assets/seats.jpg" alt="seats">
-    </div>
+    </div> -->
     <div class="ad-main-info">
       <h1>Fotele samochodowe</h1>
       <p>Marka:{{ adBrand }}</p>
