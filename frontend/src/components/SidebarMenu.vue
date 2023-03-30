@@ -1,34 +1,3 @@
-<!-- <template>
-  <div>
-      <VueSidebarMenuAkahon />
-  </div>
-</template> -->
-
-<!-- <template>
-  <div>
-    <ul>
-      <li>
-        <router-link to="/">Strona główna</router-link>
-      </li>
-      <li>
-        <router-link to="/users">Użytkownicy</router-link>
-      </li>
-    </ul>
-  </div>
-</template>
-
-<script>
-  import VueSidebarMenuAkahon from "vue-sidebar-menu-akahon";
-  
-  export default {
-    name: 'SidebarMenu',
-    components: {VueSidebarMenuAkahon},
-    data() {
-      return {}
-    }
-  }
-</script> -->
-
 <template>
   <div
     class="sidebar"
@@ -70,19 +39,6 @@
           class="nav-list"
           style="overflow: visible;"
         >
-          <!-- <li
-            v-if="isSearch"
-            @click="isOpened = true"
-          >
-            <i class="bx bx-search" />
-            <input
-              type="text"
-              :placeholder="searchPlaceholder"
-              @input="$emit('search-input-emit', $event.target.value)"
-            >
-            <span class="tooltip">{{ searchTooltip }}</span>
-          </li> -->
-
           <span
             v-for="(menuItem, index) in menuItems"
             :key="index"
@@ -113,10 +69,6 @@
         type: Boolean,
         default: true,
       },
-      // menuTitle: {
-      //   type: String,
-      //   default: 'CarPartFinder',
-      // },
       menuLogo: {
         type: String,
         default: '',
@@ -143,49 +95,37 @@
         type: Array,
         default: () => [
           {
-            link: '#',
+            link: '/',
             name: 'Strona Glowna',
             tooltip: 'Strona Glowna',
             icon: 'bx-grid-alt',
           },
           {
-            link: '#',
+            link: '/uzytkownik',
             name: 'Uzytkownik',
             tooltip: 'Uzytkownik',
             icon: 'bx-user',
           },
           {
-            link: '#',
+            link: '/wiadomosci',
             name: 'Wiadomosci',
             tooltip: 'Wiadomosci',
             icon: 'bx-chat',
           },
-          // {
-          //   link: '#',
-          //   name: 'Analytics',
-          //   tooltip: 'Analytics',
-          //   icon: 'bx-pie-chart-alt-2',
-          // },
-          // {
-          //   link: '#',
-          //   name: 'File Manager',
-          //   tooltip: 'Files',
-          //   icon: 'bx-folder',
-          // },
           {
-            link: '#',
+            link: '/moje_ogloszenia',
             name: 'Moje ogloszenia',
             tooltip: 'Moje ogloszenia',
             icon: 'bx-cart-alt',
           },
           {
-            link: '#',
+            link: '/polubione',
             name: 'Polubione',
             tooltip: 'Polubione',
             icon: 'bx-heart',
           },
           {
-            link: '#',
+            link: '/ustawienia',
             name: 'Ustawienia',
             tooltip: 'Ustawienia',
             icon: 'bx-cog',
@@ -208,10 +148,10 @@
       },
 
       //! Profile detailes
-      profileImg: {
-        type: String,
-        default: require('../assets/img/photo.jpg'),
-      },
+      // profileImg: {
+      //   type: String,
+      //   default: require('../assets/img/photo.jpg'),
+      // },
       profileName: {
         type: String,
         default: 'Fayzullo Saidakbarov',
