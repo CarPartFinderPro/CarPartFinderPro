@@ -1,11 +1,7 @@
 import os
-
-from fixtures_generator.generate_users import generate_user_data
-from fixtures_generator.generate_addresses import generate_address_data
-from fixtures_generator.generate_deliveries import generate_delivery_data
-from fixtures_generator.generate_parcels import generate_parcel_data
-from fixtures_generator.generate_car_parts import generate_car_part_data
 import json
+
+from part_ad.fixtures_generator.generator import *
 
 
 class FixtureGenerator:
@@ -22,11 +18,11 @@ class FixtureGenerator:
         num_parcels = 10
         num_car_parts = 10
 
-        users = generate_user_data(num_users)
-        addresses = generate_address_data(num_addresses)
-        deliveries = generate_delivery_data(num_deliveries, num_users, num_addresses)
-        parcels = generate_parcel_data(num_parcels, num_users, num_deliveries)
-        car_parts = generate_car_part_data(num_car_parts, num_users)
+        users = generate_users.generate_user_data(num_users)
+        addresses = generate_addresses.generate_address_data(num_addresses)
+        deliveries = generate_deliveries.generate_delivery_data(num_deliveries, num_users, num_addresses)
+        parcels = generate_parcels.generate_parcel_data(num_parcels, num_users, num_deliveries)
+        car_parts = generate_car_parts.generate_car_part_data(num_car_parts, num_users)
 
         with open(self.fixtures_path + "user_fixtures.json", "w") as outfile:
             json.dump(users, outfile, default=str)
