@@ -14,7 +14,7 @@ class Parcel(models.Model):
         status (CharField): The current status of the package (e.g., 'delivered', 'in transit', etc.).
     """
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sender')
-    recipient = models.ForeignKey(Delivery, on_delete=models.CASCADE, related_name='recipient')
+    recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipient')
     weight = models.FloatField()
     tracking_number = models.CharField(max_length=50, unique=True)
     status = models.CharField(max_length=50)
