@@ -11,6 +11,7 @@ router.register(r'car_parts', CarPartViewSet)
 router.register(r'parcel', ParcelViewSet)
 router.register(r'delivery', DeliveryViewSet)
 router.register(r'address', AddressViewSet)
+router.register(r'favorite', FavoriteViewSet)
 
 # Define the URL patterns for the app.
 urlpatterns = [
