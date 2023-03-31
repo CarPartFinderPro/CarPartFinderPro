@@ -15,5 +15,12 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     active = models.BooleanField()
     email = models.EmailField()
-    mobile = models.CharField(max_length=40)
+    mobile = models.CharField(max_length=40, default='')
     registration_date = models.DateTimeField()
+
+    class Meta:
+        verbose_name = "User"
+        verbose_name_plural = "Users"
+
+    def __str__(self):
+        return f"{self.username} ({self.email})"
