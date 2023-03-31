@@ -26,7 +26,7 @@ A web platform for posting car part listings, with a focus on parts for imported
 2. `python -m venv venv` - install virtual environment
 3. Activate The virtual environment:
 - On windows
-  - `venv/Scripts/activate`
+  - `venv\Scripts\activate.bat`
 - On linux
   - `source venv/bin/activate`
 
