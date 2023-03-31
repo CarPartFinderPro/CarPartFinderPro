@@ -2,7 +2,7 @@
 from rest_framework import serializers
 
 # Importing all models that need to be serialized
-from .models import User, Parcel, Delivery, Address, CarPart
+from .models import User, Parcel, Delivery, Address, CarPart, Favorite
 
 
 # Serializer class for User model
@@ -42,5 +42,13 @@ class CarPartSerializer(serializers.ModelSerializer):
     class Meta:
         # Setting the model to be serialized
         model = CarPart
+        # Including all fields of the model
+        fields = "__all__"
+
+# Serializer class for Favorite model
+class FavoriteSerializer(serializers.ModelSerializer):
+    class Meta:
+        # Setting the model to be serialized
+        model = Favorite
         # Including all fields of the model
         fields = "__all__"

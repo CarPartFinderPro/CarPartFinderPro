@@ -14,6 +14,7 @@ def generate_user_data(num_users=10):
                 "username": fake.user_name(),
                 "password": fake.password(),
                 "email": fake.email(),
+                "mobile": f'+48 {fake.msisdn()[3:]}',
                 "active": random.choice([True, False]),
                 "registration_date": fake.date_time_this_year().isoformat(),
             }

@@ -5,10 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_http_methods
 from rest_framework.decorators import api_view
 from rest_framework import viewsets
-from rest_framework.response import Response 
-from rest_framework.views import APIView
-from rest_framework import status
-from .serializers import UserSerializer, DeliverySerializer, AddressSerializer, ParcelSerializer, CarPartSerializer
+from .serializers import UserSerializer, DeliverySerializer, AddressSerializer, ParcelSerializer, CarPartSerializer, FavoriteSerializer
 from .models import *
 
 @require_http_methods(["GET"])
@@ -57,28 +54,6 @@ class ParcelViewSet(viewsets.ModelViewSet):
     queryset = Parcel.objects.all()
     serializer_class = ParcelSerializer
 
-# Define views to return JSON data from fixture files
-def user_list(request):
-    with open('fixtures/user_fixtures.json') as f:
-        data = json.load(f)
-    return JsonResponse(data, safe=False)
-
-def address_list(request):
-    with open('fixtures/address_fixtures.json') as f:
-        data = json.load(f)
-    return JsonResponse(data, safe=False)
-
-def delivery_list(request):
-    with open('fixtures/delivery_fixtures.json') as f:
-        data = json.load(f)
-    return JsonResponse(data, safe=False)
-
-def parcel_list(request):
-    with open('fixtures/parcel_fixtures.json') as f:
-        data = json.load(f)
-    return JsonResponse(data, safe=False)
-
-def car_part_list(request):
-    with open('fixtures/car_part_fixtures.json') as f:
-        data = json.load(f)
-    return JsonResponse(data, safe=False)
+class FavoriteViewSet(viewsets.ModelViewSet):
+    queryset = Parcel.objects.all()
+    serializer_class = FavoriteSerializer

@@ -23,6 +23,7 @@ class FixtureGenerator:
         deliveries = generate_deliveries.generate_delivery_data(num_deliveries, num_users, num_addresses)
         parcels = generate_parcels.generate_parcel_data(num_parcels, num_users, num_deliveries)
         car_parts = generate_car_parts.generate_car_part_data(num_car_parts, num_users)
+        favorite = generate_favorite.generate_favorite_data(num_car_parts, num_users)
 
         with open(self.fixtures_path + "user_fixtures.json", "w") as outfile:
             json.dump(users, outfile, default=str)
@@ -38,6 +39,9 @@ class FixtureGenerator:
 
         with open(self.fixtures_path + "car_part_fixtures.json", "w") as outfile:
             json.dump(car_parts, outfile, default=str)
+
+        with open(self.fixtures_path + "favorite_fixtures.json", "w") as outfile:
+            json.dump(favorite, outfile, default=str)
 
 
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ class Command(BaseCommand):
         # fixture_files.sort()
 
         fixture_files = ['address_fixtures.json', 'user_fixtures.json', 'delivery_fixtures.json', 'parcel_fixtures.json',
-                         'car_part_fixtures.json']
+                         'car_part_fixtures.json', "favorite_fixtures.json"]
         # Flush the current data in the database before loading fixtures
         # call_command("flush", "--noinput", verbosity=0)
 
