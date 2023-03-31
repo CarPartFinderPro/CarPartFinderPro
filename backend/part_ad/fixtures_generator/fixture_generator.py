@@ -12,18 +12,14 @@ class FixtureGenerator:
             os.makedirs(self.fixtures_path)
 
     def init_fixtures(self):
-        num_users = 10
-        num_addresses = 10
-        num_deliveries = 10
-        num_parcels = 10
-        num_car_parts = 10
+        generate_num = 10
 
-        users = generate_users.generate_user_data(num_users)
-        addresses = generate_addresses.generate_address_data(num_addresses)
-        deliveries = generate_deliveries.generate_delivery_data(num_deliveries, num_users, num_addresses)
-        parcels = generate_parcels.generate_parcel_data(num_parcels, num_users, num_deliveries)
-        car_parts = generate_car_parts.generate_car_part_data(num_car_parts, num_users)
-        favorite = generate_favorite.generate_favorite_data(num_car_parts, num_users)
+        users = generate_users.generate_user_data(generate_num)
+        addresses = generate_addresses.generate_address_data(generate_num)
+        deliveries = generate_deliveries.generate_delivery_data(generate_num, generate_num, generate_num)
+        parcels = generate_parcels.generate_parcel_data(generate_num, generate_num, generate_num)
+        car_parts = generate_car_parts.generate_car_part_data(generate_num, generate_num)
+        favorite = generate_favorite.generate_favorite_data(generate_num,generate_num)
 
         with open(self.fixtures_path + "user_fixtures.json", "w") as outfile:
             json.dump(users, outfile, default=str)

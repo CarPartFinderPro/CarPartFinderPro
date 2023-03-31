@@ -11,7 +11,7 @@ def generate_favorite_data(num_favorite=10, num_part_ad=10):
         favorite = {
             "model": "part_ad.Favorite",
             "fields": {
-                "username": fake.random_int(min=1, max=num_favorite),
+                "user": fake.random_int(min=1, max=num_favorite),
                 "part_ad": fake.random_int(min=1, max=num_part_ad),
                 "create_date": fake.date_time_this_year().isoformat(),
             }
