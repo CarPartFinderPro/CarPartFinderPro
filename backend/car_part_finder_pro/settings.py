@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import config
+
 # from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -24,9 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['localhost','127.0.0.1','http://localhost:8080', 'http://localhost:8001','http://localhost:8002']
-# SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = 'django-insecure-rjc2b26%l=%g0*8s83@uc3q$!j3s2fk^6qjx4sn^bur_w=b4xb'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://localhost:8080', 'http://localhost:8001', 'http://localhost:8002']
+SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
 
@@ -81,22 +81,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'car_part_finder_pro.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'sgtBUb0SnSMpR5qSg2cY',
-        'HOST': 'containers-us-west-184.railway.app',
-        'PORT': '6225',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': config('DB_NAME', default=BASE_DIR / 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -116,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -127,7 +119,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

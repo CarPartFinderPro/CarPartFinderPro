@@ -23,7 +23,14 @@ A web platform for posting car part listings, with a focus on parts for imported
 
 ### How to start the project on a local machine:
 1. `git clone` - clone the repository
-2. `pip install -r requirements.txt` - install the required packages
+2. `python -m venv venv` - install virtual environment
+3. Activate The virtual environment:
+- On windows
+  - `venv/Scripts/activate`
+- On linux
+  - `source venv/bin/activate`
+
+4. `pip install -r requirements.txt` - install the required packages
 
 ### Branches:
 - Use `frontend-branch` for frontend-related file modifications.
