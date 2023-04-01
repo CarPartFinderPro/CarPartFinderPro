@@ -7,7 +7,7 @@ A web platform for posting car part listings, with a focus on parts for imported
 1. **What are we creating?** - A web platform that allows users to post listings for car parts.
 2. **Why are we creating this?** - To increase the availability of parts for imported American cars and vehicles with hard-to-find parts.
 3. **How are we creating this?**:
-    - a) Initial technology stack: Django - Python, Vue.js, PostgreSQL.
+    - a) Initial technology stack: Django - Python, Vue.js, SQLite.
     - b) Diagramming tools for creating team workflows and user application use-case scenarios.
     - c) Task tracking tools such as Trello.
 
