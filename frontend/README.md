@@ -1,4 +1,8 @@
-# strona-glowna
+# CarPartFinderPro 
+```
+Service frontend with Vue.js
+```
+
 
 ## Project setup
 ```
@@ -31,7 +35,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Create link to pages mentioned in navbar
 - [ ] Get Data from API for:
   - [x] main page
-  - [ ] details page for car part AD
+  - [x] details page for car part AD
   - [ ] Favorite
 - [ ] Add Logo
 - [ ] Create Login Page

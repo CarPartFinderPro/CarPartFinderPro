@@ -1,5 +1,7 @@
 # CarPartFinderPro
-
+```
+Application API with service logic
+```
 A web platform for posting car part listings, with a focus on parts for imported American cars and vehicles with hard-to-find parts.
 
 ---
