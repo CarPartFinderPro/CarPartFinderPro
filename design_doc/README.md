@@ -11,6 +11,16 @@ A web platform for posting car part listings, with a focus on parts for imported
     - b) Diagramming tools for creating team workflows and user application use-case scenarios.
     - c) Task tracking tools such as Trello.
 
+### Important
+- Provide workflow
+- Provide design and docs
+- Set tasks
+- Set Capacity
+- Set priority
+- Create daily standups 
+- Create weekly retro meetings
+
+
 ## DOCS:
 
 - DESIGN:
@@ -21,7 +31,8 @@ A web platform for posting car part listings, with a focus on parts for imported
 - JIRA
   - [Stories (tasks)](https://carpartfinderpro.atlassian.net/jira/software/projects/CAR/boards/1)
 
-## Project Authors:
+
+### Project Authors:
 
 - Wiktoria Kuprańska
 - Hubert Fijołek
