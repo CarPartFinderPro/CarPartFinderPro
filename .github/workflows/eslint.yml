@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: list catalogs
+        run: ls -al
       - name: Change working directory to frontend
         run: cd frontend
       - name: Install dependencies
