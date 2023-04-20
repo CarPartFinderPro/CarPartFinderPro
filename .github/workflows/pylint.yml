@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Print working directory
+        run: pwd
       - name: Change working directory to backend
         run: cd backend
       - name: Print working directory
