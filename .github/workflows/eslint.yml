@@ -14,4 +14,4 @@ jobs:
       - name: Install ESLint Vue plugin
         run: npm install --prefix frontend eslint-plugin-vue
       - name: Run ESLint
-        run: npx eslint --config frontend/.eslintrc.yml --ext .js,.vue src
+        run: npx eslint --config frontend/.eslintrc.yml --ext .js,.vue frontend/src
