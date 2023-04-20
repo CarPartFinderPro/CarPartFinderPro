@@ -1,11 +1,15 @@
-from .user import User
+"""
+Module containing the Favorite model class.
+"""
 from django.db import models
 from .car_part import CarPart
+from .user import User
 
 
 class Favorite(models.Model):
     """
-    Model representing a Favorite.
+    Represents a favorite.
+
     Fields:
         user (ForeignKey): The user who added the part to favorites.
         part_ad (ForeignKey): The CarPart object that was added to favorites.
@@ -21,4 +25,4 @@ class Favorite(models.Model):
         ordering = ["-create_date"]
 
     def __str__(self):
-        return f"{self.user.username} - {self.part_ad}"
+        return f"{self.user} - {self.part_ad}"

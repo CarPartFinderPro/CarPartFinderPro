@@ -1,4 +1,7 @@
 [MASTER]
+ignore=migrations
+disable=
+    C0115, E1101, R0901, R0903, W0621, pointless-string-statement
 
 [MESSAGES CONTROL]
 disable = C0103,C0301,R0801

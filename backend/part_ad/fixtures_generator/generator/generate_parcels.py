@@ -1,12 +1,17 @@
+"""
+Module for generating parcel fixtures.
+"""
 import json
 import random
-
 from faker import Faker
 
 fake = Faker()
 
 
 def generate_parcel_data(num_parcels=10, num_users=10, num_deliveries=10):
+    """
+    Generate data for parcels.
+    """
     parcels = []
     for _ in range(num_parcels):
         parcel = {
@@ -27,5 +32,5 @@ if __name__ == "__main__":
     num_parcels = 10
     parcels = generate_parcel_data(num_parcels)
 
-    with open("parcel_fixtures.json", "w") as outfile:
-        json.dump(parcels, outfile)
+    with open("parcel_fixtures.json", "w", encoding='utf-8') as outfile:
+        json.dump(parcels, outfile, ensure_ascii=False)

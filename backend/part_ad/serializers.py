@@ -1,3 +1,6 @@
+"""
+Serializer module
+"""
 # Importing serializers from Django REST framework
 from rest_framework import serializers
 
@@ -13,6 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
         # Including all fields of the model
         fields = "__all__"
 
+
 # Serializer class for Parcel model
 class ParcelSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,6 +24,7 @@ class ParcelSerializer(serializers.ModelSerializer):
         model = Parcel
         # Including all fields of the model
         fields = "__all__"
+
 
 # Serializer class for Delivery model
 class DeliverySerializer(serializers.ModelSerializer):
@@ -29,6 +34,7 @@ class DeliverySerializer(serializers.ModelSerializer):
         # Including all fields of the model
         fields = "__all__"
 
+
 # Serializer class for Address model
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
@@ -37,6 +43,7 @@ class AddressSerializer(serializers.ModelSerializer):
         # Including all fields of the model
         fields = "__all__"
 
+
 # Serializer class for CarPart model
 class CarPartSerializer(serializers.ModelSerializer):
     class Meta:
@@ -44,6 +51,7 @@ class CarPartSerializer(serializers.ModelSerializer):
         model = CarPart
         # Including all fields of the model
         fields = "__all__"
+
 
 # Serializer class for Favorite model
 class FavoriteSerializer(serializers.ModelSerializer):

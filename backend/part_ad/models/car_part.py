@@ -1,3 +1,6 @@
+"""
+Module containing the CarPart model class.
+"""
 from django.db import models
 from .user import User
 
@@ -5,6 +8,7 @@ from .user import User
 class CarPart(models.Model):
     """
     Model representing a car part advertisement.
+
     Fields:
         title (CharField): The title of the car part advertisement.
         description (TextField): A detailed description of the car part.
@@ -46,4 +50,4 @@ class CarPart(models.Model):
         verbose_name_plural = "Car Parts"
 
     def __str__(self):
-        return self.title
+        return str(self.title)

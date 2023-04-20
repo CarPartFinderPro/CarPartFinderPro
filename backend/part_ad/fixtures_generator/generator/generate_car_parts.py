@@ -1,3 +1,6 @@
+"""
+Module for generating car part fixtures.
+"""
 import json
 import random
 from faker import Faker
@@ -6,6 +9,16 @@ fake = Faker()
 
 
 def generate_car_part_data(num_car_parts=10, num_users=10):
+    """
+    Generates data for car part fixtures.
+
+    Args:
+        num_car_parts (int): The number of car parts to generate data for.
+        num_users (int): The number of users in the database.
+
+    Returns:
+        A list of dictionaries representing car part fixtures.
+    """
     car_parts = []
     for _ in range(num_car_parts):
         car_part = {
@@ -29,12 +42,12 @@ def generate_car_part_data(num_car_parts=10, num_users=10):
             }
         }
         car_parts.append(car_part)
-    # print(car_parts)
     return car_parts
+
 
 if __name__ == "__main__":
     num_car_parts = 10
     car_parts = generate_car_part_data(num_car_parts)
 
-    with open("car_part_fixtures.json", "w") as outfile:
-        json.dump(car_parts, outfile)
+    with open("car_part_fixtures.json", "w", encoding="utf-8") as outfile:
+        json.dump(car_parts, outfile, ensure_ascii=False, indent=4)

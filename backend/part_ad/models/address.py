@@ -1,3 +1,6 @@
+"""
+Module containing the Address model class.
+"""
 from django.db import models
 
 

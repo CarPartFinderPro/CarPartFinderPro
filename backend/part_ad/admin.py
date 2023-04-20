@@ -1,6 +1,9 @@
+"""
+Admin module
+"""
 from django.contrib import admin
 
-from part_ad.models import (User, Parcel, Delivery, CarPart, Address)
+from .models import (User, Parcel, Delivery, CarPart, Address)
 
 # Register your models here.
 admin.site.register(User)

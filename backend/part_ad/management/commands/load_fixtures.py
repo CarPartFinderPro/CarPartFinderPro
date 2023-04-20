@@ -1,11 +1,15 @@
-import os
-import glob
+"""
+Module containing the load_fixtures management command.
+"""
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
-from part_ad.fixtures_generator.fixture_generator import FixtureGenerator
+from backend.part_ad.fixtures_generator.fixture_generator import FixtureGenerator
 
 
 class Command(BaseCommand):
+    """
+    Django management command for generating and loading fixtures from the 'fixtures' directory.
+    """
     help = "Generate and load all fixtures from the 'fixtures' directory."
 
     def __init__(self):

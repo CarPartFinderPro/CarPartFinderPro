@@ -1,3 +1,6 @@
+"""
+Module containing the Delivery model class.
+"""
 from django.db import models
 from .user import User
 from .address import Address
@@ -6,6 +9,7 @@ from .address import Address
 class Delivery(models.Model):
     """
     Model representing a user's delivery address.
+
     Fields:
         user (ForeignKey): The user to which the delivery address belongs.
         address (ForeignKey): The delivery address.
@@ -21,4 +25,4 @@ class Delivery(models.Model):
         unique_together = ('user', 'address_type')
 
     def __str__(self):
-        return f"{self.user.username}'s {self.address_type} address"
+        return f"{self.user}\'s {self.address_type} address"

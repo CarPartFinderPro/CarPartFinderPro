@@ -1,11 +1,24 @@
+"""
+Module for generating favorite fixtures.
+"""
+
 import json
-import random
 from faker import Faker
 
 fake = Faker()
 
 
 def generate_favorite_data(num_favorite=10, num_part_ad=10):
+    """
+    Generate favorite fixtures data.
+
+    Args:
+        num_favorite (int): Number of favorites to generate.
+        num_part_ad (int): Number of part advertisements to choose from.
+
+    Returns:
+        list: A list of dictionaries containing fixture data.
+    """
     favorites = []
     for _ in range(num_favorite):
         favorite = {
@@ -24,5 +37,5 @@ if __name__ == "__main__":
     num_favorite = 10
     favorite = generate_favorite_data(num_favorite)
 
-    with open("favorite_fixtures.json", "w") as outfile:
+    with open("favorite_fixtures.json", "w", encoding="utf-8") as outfile:
         json.dump(favorite, outfile)

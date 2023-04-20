@@ -1,8 +1,24 @@
+"""
+Module for generating delivery fixtures.
+"""
+
 import itertools
 from faker import Faker
 
 fake = Faker()
+
 def generate_delivery_data(num_deliveries=10, num_users=10, num_addresses=10):
+    """
+    Generate delivery fixtures data.
+
+    Args:
+        num_deliveries (int): The number of deliveries to generate.
+        num_users (int): The number of users.
+        num_addresses (int): The number of addresses.
+
+    Returns:
+        list: List of dictionaries representing delivery fixtures.
+    """
     deliveries = []
 
     user_address_combinations = list(itertools.product(range(1, num_users + 1), ("home", "work")))
