@@ -16,6 +16,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r backend/requirements.txt
       - name: Run Pylint on car_part_finder_pro app
-        run: pylint backend/car_part_finder_pro
+        run: pylint --rcfile=./backend/.pylintrc backend/car_part_finder_pro
       - name: Run Pylint on part_ad app
-        run: pylint backend/part_ad
+        run: pylint --rcfile=./backend/.pylintrc backend/part_ad
