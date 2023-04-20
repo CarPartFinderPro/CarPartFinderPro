@@ -1,0 +1,21 @@
+name: Run ESlint
+on:
+  push:
+    branches:
+      - main
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Change working directory to frontend
+        run: cd frontend
+      - name: Install dependencies
+        run: npm install
+      - name: Run ESlint
+        run: npx eslint --config frontend/.eslintrc.yml --ext .js,.vue src
