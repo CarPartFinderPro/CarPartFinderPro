@@ -1,5 +1,5 @@
 [MASTER]
-ignore=migrations
+ignore=part_ad/migrations/*, part_ad/fixtures_generator/*, part_ad/fixtures/*  car_part_finder_pro/migrations,
 disable=
     C0115, E1101, R0901, R0903, W0621, pointless-string-statement
 
