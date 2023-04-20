@@ -10,4 +10,5 @@ parserOptions:
   sourceType: module
 plugins:
   - vue
+  - eslint-plugin-vue
 rules: {}
