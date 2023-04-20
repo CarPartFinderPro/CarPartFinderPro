@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Change working directory to backend
-        run: cd ${{github.workspace}}/backend
+        run: cd ${{github.workspace}}/CarPartFinderPro/backend
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
