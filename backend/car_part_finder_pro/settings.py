@@ -25,7 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'http://localhost:8080', 'http://localhost:8001', 'http://localhost:8002']
+ALLOWED_HOSTS = ['localhost',
+                 '127.0.0.1',
+                 'http://localhost:8080',
+                 'http://localhost:8001',
+                 'http://localhost:8002']
 SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
