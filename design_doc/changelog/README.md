@@ -53,7 +53,7 @@
 - Refactor API
 - Add serializer, model, url and API for Favorite ADs
 
-### v0.7.5:
+### v1b:
 
 - add Github workflow for backend and frontend
 - configure pylint for backend
@@ -65,7 +65,7 @@
 
 ## In progress:
 
-### v0.8+
+### v1.1b+
 
 - Add favorite page view
 - Add search bar
