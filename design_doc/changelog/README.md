@@ -53,6 +53,15 @@
 - Refactor API
 - Add serializer, model, url and API for Favorite ADs
 
+### v0.7.5:
+
+- add Github workflow for backend and frontend
+- configure pylint for backend
+- configure eslint for frontend
+- add few test cases - unit tests for API
+- add regression/whitebox tests for backend and frontend with code coverage above 80%
+- Refactor backend modules, add missing docstrings
+- Refactor frontend modules, fix errors, eslint raised flags
 
 ## In progress:
 
