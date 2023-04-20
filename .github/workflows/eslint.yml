@@ -9,13 +9,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: list catalogs
-        run: ls -al
-      - name: Change working directory to frontend
-        run: cd frontend
       - name: Install dependencies
-        run: npm install
+        run: npm install --prefix frontend
       - name: Install ESLint Vue plugin
-        run: npm install eslint-plugin-vue
+        run: npm install --prefix frontend eslint-plugin-vue
       - name: Run ESLint
         run: npx eslint --config frontend/.eslintrc.yml --ext .js,.vue src
