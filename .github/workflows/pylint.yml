@@ -10,13 +10,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Change working directory to backend
-        run: cd ${{github.workspace}}/CarPartFinderPro/backend
+        run: cd ${{github.workspace}}/backend
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.11.2'
       - name: List working directory files
-        run: ls -a
+        run: pwd
       - name: Add user permissions
         run: chmod +r requirements.txt
       - name: Install dependencies
