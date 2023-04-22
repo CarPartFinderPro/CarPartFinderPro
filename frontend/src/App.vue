@@ -40,17 +40,17 @@ nav {
 </template>
 
 <script>
-import VueSidebarMenuAkahon from "./components/SidebarMenu.vue";
-import HeaderComponent from "./components/HeaderComponent.vue";
+import VueSidebarMenuAkahon from './components/SidebarMenu.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     VueSidebarMenuAkahon,
     HeaderComponent
   },
-  data() {
-    return {};
-  },
-};
+  data () {
+    return {}
+  }
+}
 </script>

@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import VueSidebarMenuAkahon from "vue-sidebar-menu-akahon";
-import HeaderComponent from "./components/HeaderComponent.vue";
+import VueSidebarMenuAkahon from 'vue-sidebar-menu-akahon'
+import HeaderComponent from './components/HeaderComponent.vue'
 export default {
-  name: "AdSite",
+  name: 'AdSite',
   components: {
     VueSidebarMenuAkahon,
     HeaderComponent
@@ -56,14 +56,14 @@ export default {
     adPrice: String,
     sellerName: String,
     sellerEmail: String,
-    sellerPhone: String,
+    sellerPhone: String
   },
   methods: {
-    buyNow() {
+    buyNow () {
       // logika dla kliknięcia przycisku "Kup Teraz"
     }
   }
-};
+}
 </script>
 
 <style scoped>

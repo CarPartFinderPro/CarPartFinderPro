@@ -17,21 +17,21 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
-  data() {
+  data () {
     return {
       carParts: []
     }
   },
-  mounted() {
+  mounted () {
     axios.get('/api/car_parts/')
       .then(response => {
-        this.carParts = response.data;
+        this.carParts = response.data
       })
       .catch(error => {
-        console.log(error);
+        console.log(error)
       })
   }
 }

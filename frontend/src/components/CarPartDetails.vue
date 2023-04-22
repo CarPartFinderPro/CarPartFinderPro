@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   props: {
@@ -47,32 +47,32 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
       carPart: {},
       user: {} // Dodane
     }
   },
-  mounted() {
+  mounted () {
     axios.get(`/api/car_parts/${this.id}/`)
       .then(response => {
-        this.carPart = response.data;
+        this.carPart = response.data
         // Dodane: Pobierz dane użytkownika po otrzymaniu carPart
-        return axios.get(`/api/users/${this.carPart.seller}/`);
+        return axios.get(`/api/users/${this.carPart.seller}/`)
       })
       .then(response => {
         // Dodane: Zaktualizuj dane użytkownika
-        this.user = response.data;
+        this.user = response.data
       })
       .catch(error => {
-        console.log(error);
-      });
+        console.log(error)
+      })
   },
   methods: {
-    goToHomePage() {
-      this.$router.push('/');
+    goToHomePage () {
+      this.$router.push('/')
     }
-  }  
+  }
 }
 </script>
 <style>
@@ -173,7 +173,7 @@ export default {
   border-radius: 5px;
   width: 100%; /* Dodane */
   margin-top: 20px; /* Dodane */
-  
+
 }
 
 .car-part-details button {

@@ -61,183 +61,183 @@
 </template>
 
 <script>
-  export default {
-    name: 'SidebarMenuAkahon',
-    props: {
-      //! Menu settings
-      isMenuOpen: {
-        type: Boolean,
-        default: true,
-      },
-      menuLogo: {
-        type: String,
-        default: '',
-      },
-      menuIcon: {
-        type: String,
-        default: 'bxl-c-plus-plus',
-      },
-      isPaddingLeft: {
-        type: Boolean,
-        default: true,
-      },
-       menuOpenedPaddingLeftBody: {
-        type: String,
-        default: '250px'
-      },
-      menuClosedPaddingLeftBody: {
-        type: String,
-        default: '78px'
-      },
-
-      //! Menu items
-      menuItems: {
-        type: Array,
-        default: () => [
-          {
-            link: '/',
-            name: 'Strona Glowna',
-            tooltip: 'Strona Glowna',
-            icon: 'bx-grid-alt',
-          },
-          {
-            link: '/uzytkownik',
-            name: 'Uzytkownik',
-            tooltip: 'Uzytkownik',
-            icon: 'bx-user',
-          },
-          {
-            link: '/wiadomosci',
-            name: 'Wiadomosci',
-            tooltip: 'Wiadomosci',
-            icon: 'bx-chat',
-          },
-          {
-            link: '/moje_ogloszenia',
-            name: 'Moje ogloszenia',
-            tooltip: 'Moje ogloszenia',
-            icon: 'bx-cart-alt',
-          },
-          {
-            link: '/polubione',
-            name: 'Polubione',
-            tooltip: 'Polubione',
-            icon: 'bx-heart',
-          },
-          {
-            link: '/ustawienia',
-            name: 'Ustawienia',
-            tooltip: 'Ustawienia',
-            icon: 'bx-cog',
-          },
-        ],
-      },
-
-      //! Search
-      isSearch: {
-        type: Boolean,
-        default: true,
-      },
-      searchPlaceholder: {
-        type: String,
-        default: 'Search...',
-      },
-      searchTooltip: {
-        type: String,
-        default: 'Search',
-      },
-
-      //! Profile detailes
-      // profileImg: {
-      //   type: String,
-      //   default: require('../assets/img/photo.jpg'),
-      // },
-      profileName: {
-        type: String,
-        default: 'Fayzullo Saidakbarov',
-      },
-      profileRole: {
-        type: String,
-        default: 'Frontend vue developer',
-      },
-      isExitButton: {
-        type: Boolean,
-        default: true,
-      },
-
-      //! Styles
-      bgColor: {
-        type: String,
-        default: '#11101d',
-      },
-      secondaryColor: {
-        type: String,
-        default: '#1d1b31',
-      },
-      homeSectionColor: {
-        type: String,
-        default: '#e4e9f7',
-      },
-      logoTitleColor: {
-        type: String,
-        default: '#fff',
-      },
-      iconsColor: {
-        type: String,
-        default: '#fff',
-      },
-      itemsTooltipColor: {
-        type: String,
-        default: '#e4e9f7',
-      },
-      searchInputTextColor: {
-        type: String,
-        default: '#fff',
-      },
-      menuItemsHoverColor: {
-        type: String,
-        default: '#fff',
-      },
-      menuItemsTextColor: {
-        type: String,
-        default: '#fff',
-      },
-      menuFooterTextColor: {
-        type: String,
-        default: '#fff',
-      },
+export default {
+  name: 'SidebarMenuAkahon',
+  props: {
+    //! Menu settings
+    isMenuOpen: {
+      type: Boolean,
+      default: true
     },
-    data() {
-      return {
-        isOpened: false
-      }
+    menuLogo: {
+      type: String,
+      default: ''
     },
-    mounted() {
-      this.isOpened = this.isMenuOpen
+    menuIcon: {
+      type: String,
+      default: 'bxl-c-plus-plus'
     },
-    computed: {
-      cssVars() {
-        return {
-          // '--padding-left-body': this.isOpened ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody,
-          '--bg-color': this.bgColor,
-          '--secondary-color': this.secondaryColor,
-          '--home-section-color': this.homeSectionColor,
-          '--logo-title-color': this.logoTitleColor,
-          '--icons-color': this.iconsColor,
-          '--items-tooltip-color': this.itemsTooltipColor,
-          '--serach-input-text-color': this.searchInputTextColor,
-          '--menu-items-hover-color': this.menuItemsHoverColor,
-          '--menu-items-text-color': this.menuItemsTextColor,
-          '--menu-footer-text-color': this.menuFooterTextColor,
+    isPaddingLeft: {
+      type: Boolean,
+      default: true
+    },
+    menuOpenedPaddingLeftBody: {
+      type: String,
+      default: '250px'
+    },
+    menuClosedPaddingLeftBody: {
+      type: String,
+      default: '78px'
+    },
+
+    //! Menu items
+    menuItems: {
+      type: Array,
+      default: () => [
+        {
+          link: '/',
+          name: 'Strona Glowna',
+          tooltip: 'Strona Glowna',
+          icon: 'bx-grid-alt'
+        },
+        {
+          link: '/uzytkownik',
+          name: 'Uzytkownik',
+          tooltip: 'Uzytkownik',
+          icon: 'bx-user'
+        },
+        {
+          link: '/wiadomosci',
+          name: 'Wiadomosci',
+          tooltip: 'Wiadomosci',
+          icon: 'bx-chat'
+        },
+        {
+          link: '/moje_ogloszenia',
+          name: 'Moje ogloszenia',
+          tooltip: 'Moje ogloszenia',
+          icon: 'bx-cart-alt'
+        },
+        {
+          link: '/polubione',
+          name: 'Polubione',
+          tooltip: 'Polubione',
+          icon: 'bx-heart'
+        },
+        {
+          link: '/ustawienia',
+          name: 'Ustawienia',
+          tooltip: 'Ustawienia',
+          icon: 'bx-cog'
         }
-      },
+      ]
     },
-    watch: {
-      isOpened() {
-        window.document.body.style.paddingLeft = this.isOpened && this.isPaddingLeft ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody
+
+    //! Search
+    isSearch: {
+      type: Boolean,
+      default: true
+    },
+    searchPlaceholder: {
+      type: String,
+      default: 'Search...'
+    },
+    searchTooltip: {
+      type: String,
+      default: 'Search'
+    },
+
+    //! Profile detailes
+    // profileImg: {
+    //   type: String,
+    //   default: require('../assets/img/photo.jpg'),
+    // },
+    profileName: {
+      type: String,
+      default: 'Fayzullo Saidakbarov'
+    },
+    profileRole: {
+      type: String,
+      default: 'Frontend vue developer'
+    },
+    isExitButton: {
+      type: Boolean,
+      default: true
+    },
+
+    //! Styles
+    bgColor: {
+      type: String,
+      default: '#11101d'
+    },
+    secondaryColor: {
+      type: String,
+      default: '#1d1b31'
+    },
+    homeSectionColor: {
+      type: String,
+      default: '#e4e9f7'
+    },
+    logoTitleColor: {
+      type: String,
+      default: '#fff'
+    },
+    iconsColor: {
+      type: String,
+      default: '#fff'
+    },
+    itemsTooltipColor: {
+      type: String,
+      default: '#e4e9f7'
+    },
+    searchInputTextColor: {
+      type: String,
+      default: '#fff'
+    },
+    menuItemsHoverColor: {
+      type: String,
+      default: '#fff'
+    },
+    menuItemsTextColor: {
+      type: String,
+      default: '#fff'
+    },
+    menuFooterTextColor: {
+      type: String,
+      default: '#fff'
+    }
+  },
+  data () {
+    return {
+      isOpened: false
+    }
+  },
+  mounted () {
+    this.isOpened = this.isMenuOpen
+  },
+  computed: {
+    cssVars () {
+      return {
+        // '--padding-left-body': this.isOpened ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody,
+        '--bg-color': this.bgColor,
+        '--secondary-color': this.secondaryColor,
+        '--home-section-color': this.homeSectionColor,
+        '--logo-title-color': this.logoTitleColor,
+        '--icons-color': this.iconsColor,
+        '--items-tooltip-color': this.itemsTooltipColor,
+        '--serach-input-text-color': this.searchInputTextColor,
+        '--menu-items-hover-color': this.menuItemsHoverColor,
+        '--menu-items-text-color': this.menuItemsTextColor,
+        '--menu-footer-text-color': this.menuFooterTextColor
       }
     }
+  },
+  watch: {
+    isOpened () {
+      window.document.body.style.paddingLeft = this.isOpened && this.isPaddingLeft ? this.menuOpenedPaddingLeftBody : this.menuClosedPaddingLeftBody
+    }
   }
+}
 </script>
 
 <style>
@@ -522,13 +522,13 @@
   }
   #my-scroll::-webkit-scrollbar{
     display:none;
-    /* background-color: rgba(255, 255, 255, 0.2); 
+    /* background-color: rgba(255, 255, 255, 0.2);
     width: 10px;
     border-radius:5px  */
   }
   /* #my-scroll::-webkit-scrollbar-thumb{
     background-color: red;
-    border-radius:5px 
+    border-radius:5px
   }
   #my-scroll::-webkit-scrollbar-button:vertical:start:decrement{
     display:none;
@@ -541,6 +541,5 @@
       display: none;
     }
 }
-
 
 </style>

@@ -30,34 +30,34 @@
       </table>
     </div>
   </template>
-  
-  <script>
-  import axios from 'axios';
-  
-  export default {
-    data() {
-      return {
-        user: {},
-        showPassword: false
-      }
-    },
-    mounted() {
-      axios.get('/api/users/2/')
-        .then(response => {
-          this.user = response.data;
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    },
-    computed: {
-      maskedPassword() {
-        return this.user.password ? '*'.repeat(this.user.password.length) : '';
-      }
+
+<script>
+import axios from 'axios'
+
+export default {
+  data () {
+    return {
+      user: {},
+      showPassword: false
+    }
+  },
+  mounted () {
+    axios.get('/api/users/2/')
+      .then(response => {
+        this.user = response.data
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  },
+  computed: {
+    maskedPassword () {
+      return this.user.password ? '*'.repeat(this.user.password.length) : ''
     }
   }
-  </script>
-  
+}
+</script>
+
   <style>
   .user-details {
     height: 500px;
@@ -89,4 +89,3 @@
     background-color: #ddd;
   }
   </style>
-  
